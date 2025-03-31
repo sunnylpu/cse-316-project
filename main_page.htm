@@ -23,5 +23,28 @@
                             <label class="form-label">Memory Size (KB)</label>
                             <input type="number" class="form-control" id="memorySize" value="64" min="16" max="1024">
                         </div>
+                        <div class="mb-3">
+                            <label class="form-label">Page/Frame Size (KB)</label>
+                            <input type="number" class="form-control" id="pageSize" value="4" min="1" max="16">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Replacement Algorithm</label>
+                            <select class="form-select" id="replacementAlgorithm">
+                                <option value="FIFO">FIFO</option>
+                                <option value="LRU">LRU</option>
+                                <option value="OPT">OPT (Optimal)</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Memory Management Technique</label>
+                            <select class="form-select" id="memoryTechnique">
+                                <option value="paging">Paging</option>
+                                <option value="segmentation">Segmentation</option>
+                                <option value="combined">Combined Paging & Segmentation</option>
+                            </select>
+                        </div>
+                        <button id="initBtn" class="btn btn-success w-100">Initialize Memory</button>
+                    </div>
+                </div>
 </body>
 </html>

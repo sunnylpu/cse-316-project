@@ -18,3 +18,17 @@ body {
     border-radius: 5px;
     min-height: 200px;
 }
+
+.memory-block {
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 5px;
+    text-align: center;
+    font-size: 12px;
+    transition: all 0.3s;
+}
+
+.memory-block.free {
+    background-color: #e9ecef;
+    color: #6c757d;
+}
