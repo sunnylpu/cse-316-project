@@ -19,3 +19,33 @@ document.addEventListener('DOMContentLoaded', function() {
     const hitRatioDisplay = document.getElementById('hitRatio');
     const memoryUtilizationDisplay = document.getElementById('memoryUtilization');
     const processCountDisplay = document.getElementById('processCount');
+
+                          // Memory State
+    let memory = [];
+    let frames = [];
+    let pageTable = [];
+    let processes = [];
+    let currentProcessId = 1;
+    let referenceString = [];
+    let currentReferenceIndex = 0;
+    let pageFaults = 0;
+    let pageHits = 0;
+    let replacementQueue = [];
+    let lruCounters = {};
+
+    // Initialize memory
+    initBtn.addEventListener('click', initializeMemory);
+    addProcessBtn.addEventListener('click', addProcess);
+    generateRefBtn.addEventListener('click', generateRandomReferences);
+    simulateBtn.addEventListener('click', simulateReferences);
+    stepBtn.addEventListener('click', stepThroughReferences);
+    memoryTechniqueSelect.addEventListener('change', toggleSegmentationInput);
+
+    function initializeMemory() {
+        const memorySize = parseInt(memorySizeInput.value);
+        const pageSize = parseInt(pageSizeInput.value);
+        
+        if (pageSize > memorySize) {
+            alert("Page size cannot be larger than total memory size");
+            return;
+        }
