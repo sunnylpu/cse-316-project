@@ -32,3 +32,30 @@ body {
     background-color: #e9ecef;
     color: #6c757d;
 }
+
+.memory-block.allocated {
+    background-color: #d1e7dd;
+    color: #0f5132;
+}
+
+.memory-block.active {
+    box-shadow: 0 0 0 2px #0d6efd;
+}
+
+.memory-block.page-fault {
+    animation: pageFaultAnimation 0.5s;
+    background-color: #f8d7da;
+    color: #842029;
+}
+
+@keyframes pageFaultAnimation {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+.segment {
+    border-left: 3px solid #0d6efd;
+    margin-bottom: 5px;
+    padding-left: 5px;
+}
