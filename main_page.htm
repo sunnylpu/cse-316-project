@@ -46,5 +46,35 @@
                         <button id="initBtn" class="btn btn-success w-100">Initialize Memory</button>
                     </div>
                 </div>
+                <div class="card mt-3 process-panel">
+                    <div class="card-header bg-info text-white">
+                        <h3>Process Management</h3>
+                    </div>
+                    <div class="card-body">
+                        <div class="mb-3">
+                            <label class="form-label">Process Size (KB)</label>
+                            <input type="number" class="form-control" id="processSize" value="16" min="1" max="256">
+                        </div>
+                        <div class="mb-3 segmentation-config" style="display: none;">
+                            <label class="form-label">Segments (comma separated sizes in KB)</label>
+                            <input type="text" class="form-control" id="segmentSizes" placeholder="e.g., 4,8,4 (Code,Data,Stack)">
+                        </div>
+                        <button id="addProcessBtn" class="btn btn-primary w-100">Add Process</button>
+                        <button id="generateRefBtn" class="btn btn-secondary w-100 mt-2">Generate Random References</button>
+                    </div>
+                </div>
+
+                <div class="card mt-3 stats-panel">
+                    <div class="card-header bg-warning text-dark">
+                        <h3>Statistics</h3>
+                    </div>
+                    <div class="card-body">
+                        <p>Page Faults: <span id="pageFaults">0</span></p>
+                        <p>Hit Ratio: <span id="hitRatio">0%</span></p>
+                        <p>Memory Utilization: <span id="memoryUtilization">0%</span></p>
+                        <p>Processes: <span id="processCount">0</span></p>
+                    </div>
+                </div>
+            </div>
 </body>
 </html>
