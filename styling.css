@@ -59,3 +59,49 @@ body {
     margin-bottom: 5px;
     padding-left: 5px;
 }
+.log-container {
+    max-height: 200px;
+    overflow-y: auto;
+    background-color: #f8f9fa;
+    padding: 10px;
+    border-radius: 5px;
+    font-family: monospace;
+    font-size: 14px;
+}
+
+.log-entry {
+    margin-bottom: 5px;
+    padding: 3px;
+    border-bottom: 1px solid #eee;
+}
+
+.log-entry.page-fault {
+    color: #dc3545;
+    font-weight: bold;
+}
+
+.log-entry.page-hit {
+    color: #198754;
+}
+
+.table-responsive {
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+.config-panel, .process-panel, .stats-panel {
+    position: sticky;
+    top: 20px;
+    z-index: 100;
+}
+
+.visualization-panel {
+    min-height: 300px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .config-panel, .process-panel, .stats-panel {
+        position: static;
+    }
+}
