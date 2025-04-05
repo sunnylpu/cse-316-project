@@ -76,5 +76,60 @@
                     </div>
                 </div>
             </div>
+
+            <!-- Visualization Area -->
+            <div class="col-md-8">
+                <div class="card visualization-panel">
+                    <div class="card-header bg-success text-white">
+                        <h3>Memory Visualization</h3>
+                    </div>
+                    <div class="card-body">
+                        <div id="memoryVisualization" class="memory-container"></div>
+                    </div>
+                </div>
+
+                <div class="card mt-3">
+                    <div class="card-header bg-dark text-white">
+                        <h3>Page Table & Details</h3>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table table-striped" id="pageTable">
+                                <thead>
+                                    <tr>
+                                        <th>Process</th>
+                                        <th>Page/Segment</th>
+                                        <th>Frame</th>
+                                        <th>Valid</th>
+                                        <th>Reference</th>
+                                        <th>Modified</th>
+                                    </tr>
+                                </thead>
+                                <tbody></tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card mt-3">
+                    <div class="card-header bg-secondary text-white">
+                        <h3>Reference String & Logs</h3>
+                    </div>
+                    <div class="card-body">
+                        <div class="mb-3">
+                            <label class="form-label">Reference String (comma separated)</label>
+                            <input type="text" class="form-control" id="referenceString" placeholder="e.g., 1,3,5,2,4,1,3">
+                        </div>
+                        <button id="simulateBtn" class="btn btn-primary">Simulate References</button>
+                        <button id="stepBtn" class="btn btn-outline-primary ms-2">Step Through</button>
+                        <div class="log-container mt-3" id="simulationLog"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
