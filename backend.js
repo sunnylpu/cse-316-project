@@ -49,3 +49,26 @@ document.addEventListener('DOMContentLoaded', function() {
             alert("Page size cannot be larger than total memory size");
             return;
         }
+// Initialize memory blocks
+        memory = [];
+        frames = Array(numFrames).fill(null);
+        pageTable = [];
+        processes = [];
+        currentProcessId = 1;
+        referenceString = [];
+        currentReferenceIndex = 0;
+        pageFaults = 0;
+        pageHits = 0;
+        replacementQueue = [];
+        lruCounters = {};
+
+        // Update UI
+        updateStatistics();
+        renderMemory();
+        updatePageTable();
+        simulationLog.innerHTML = '';
+        referenceStringInput.value = '';
+
+        // Log initialization
+        addLogEntry(`Memory initialized with ${memorySize}KB total, ${pageSize}KB page size, ${numFrames} frames`);
+    }
